@@ -548,7 +548,7 @@ footer::before {
 
     .newsletter form input:first-child {
         text-align: left;
-        padding-left: 10px; /* Adjust space for button */
+        padding-left: 20px; /* Adjust space for button */
         
     }
 
