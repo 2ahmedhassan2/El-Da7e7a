@@ -92,7 +92,7 @@ direction: rtl;
 text-align: right;
 background-color: transparent;
 position: absolute;
-top: 60%;
+top: 65%;
 right: 4%;
 }
 
@@ -464,7 +464,7 @@ nav {
 .content {
     left: 3%;
     right: 3%;
-    top: 60%;
+    top: 55%;
 }
 
 html,body {
