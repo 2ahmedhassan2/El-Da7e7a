@@ -547,7 +547,7 @@ footer::before {
     }
 
     .newsletter form input:first-child {
-        align-items: center;
+        text-align: center;
         padding: 20px 100px; /* Adjust space for button */
     }
 
