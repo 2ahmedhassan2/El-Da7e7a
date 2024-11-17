@@ -99,7 +99,7 @@ right: 4%;
 h1 {
 background-color: transparent;
 color: #ffeebe;
-text-shadow: 0px 0px 20px black;
+text-shadow: 0px 0px 20px bold black;
 margin: 20px 0px 20px;
 font-size: 60px;
 }
@@ -107,7 +107,7 @@ font-size: 60px;
 .h33 {
 background-color: transparent;
 color: #ffeebe;
-text-shadow: 0px 0px 20px black;
+text-shadow: 0px 0px 20px bold black;
 font-size: 40px;
 margin-bottom: 50px;
 }
@@ -115,7 +115,7 @@ margin-bottom: 50px;
 h4 {
 background-color: transparent;
 color: #ffeebe;
-text-shadow: 0px 0px 10px black;
+text-shadow: 0px 0px 10px bold black;
 letter-spacing: 2px;
 font-size: 20px;
 }
@@ -547,8 +547,8 @@ footer::before {
     }
 
     .newsletter form input:first-child {
-        text-align: center;
-        padding: 15px 100px; /* Adjust space for button */
+        text-align: left;
+        padding: 16px 100px; /* Adjust space for button */
     }
 
     .newsletter form input:last-child {
