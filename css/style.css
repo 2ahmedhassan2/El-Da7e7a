@@ -436,7 +436,6 @@ font-size: 14px;
 @media (max-width: 1580px) {
 .container {
     width: 100%;
-    hight: 100%
     align-items: center;
 }
 
@@ -460,9 +459,7 @@ nav {
 }
 
 .content {
-    left: 3%;
-    right: 3%;
-    top: 30;
+    padding: 50% 0% 10% 0%;
 }
 
 html,body {
