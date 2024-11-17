@@ -436,6 +436,7 @@ font-size: 14px;
 @media (max-width: 1580px) {
 .container {
     width: 100%;
+    hight: 100%
     align-items: center;
 }
 
