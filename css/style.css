@@ -132,7 +132,9 @@ position: relative;
 }
 
 .newsletter form input:first-child {
+color: #ffeebe;
 background-color: black;
+color: white;
 display: inline-block;
 width: 100%;
 padding: 14px 130px 14px 15px;
