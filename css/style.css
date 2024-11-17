@@ -475,17 +475,9 @@ html,body {
     overflow-x: hidden;     
 }
 
-.newsletter form {
-    width: 100%;
-}
-
 ul {
 display: flex;
 flex-direction: row;
-}
-    
-.newsletter form input:first-child {
-    padding: 14px 10px 14px 15px;
 }
 
 .about {
@@ -546,4 +538,22 @@ footer::before {
     font-size: 40px;
     width: auto;
 }
+}
+
+@media screen and (max-width: 768px) {
+    .newsletter form {
+        width: 100%; /* Ensure the form adapts to the screen width */
+    }
+
+    .newsletter form input:first-child {
+        padding: 14px 10px 14px 15px;
+        width: calc(100% - 90px); /* Adjust width to account for the button */
+    }
+
+    .newsletter form input:last-child {
+        top: 6px;
+        right: 6px;
+        width: auto;
+        padding: 10px 20px;
+    }
 }
