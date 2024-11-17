@@ -99,7 +99,7 @@ right: 4%;
 h1 {
 background-color: transparent;
 color: #ffeebe;
-text-shadow: 0px 0px 20px bold black;
+text-shadow: 0px 0px 20px black;
 margin: 20px 0px 20px;
 font-size: 60px;
 }
@@ -107,15 +107,15 @@ font-size: 60px;
 .h33 {
 background-color: transparent;
 color: #ffeebe;
-text-shadow: 0px 0px 20px bold black;
+text-shadow: 0px 0px 15px black;
 font-size: 40px;
 margin-bottom: 50px;
 }
 
 h4 {
 background-color: transparent;
-color: #ffeebe;
-text-shadow: 0px 0px 10px bold black;
+color: black;
+text-shadow: 0px 0px 15px #ffeebe;
 letter-spacing: 2px;
 font-size: 20px;
 }
@@ -434,7 +434,7 @@ nav {
 .content {
     left: 3%;
     right: 3%;
-    top: 70%;
+    top: 78%;
 }
 
 html,body {
