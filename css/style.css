@@ -495,6 +495,13 @@ html,body {
     width: 100%;
 }
 
+h1 {
+    font-size: 40px;
+}
+
+.h33 {
+    font-size: 30px;
+}
 
 footer::after {
     clip-path: circle(8% at right 44%);
