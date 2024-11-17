@@ -553,6 +553,7 @@ footer::before {
     .newsletter form input:last-child {
         top: 6px;
         right: 6px;
+        bottom: 6px;
         padding: auto;
     }
 }
