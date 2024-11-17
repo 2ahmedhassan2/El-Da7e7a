@@ -461,7 +461,7 @@ nav {
 .content {
     left: 3%;
     right: 3%;
-    top: 60%;
+    bottom: 10%;
 }
 
 html,body {
