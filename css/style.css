@@ -434,7 +434,7 @@ nav {
 .content {
     left: 3%;
     right: 3%;
-    top: 50%;
+    top: 55%;
 }
 
 html,body {
@@ -548,7 +548,7 @@ footer::before {
 
     .newsletter form input:first-child {
         text-align: center;
-        padding: 20px 100px; /* Adjust space for button */
+        padding: 15px 100px; /* Adjust space for button */
     }
 
     .newsletter form input:last-child {
