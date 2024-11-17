@@ -124,40 +124,6 @@ font-size: 20px;
     background-color: transparent;
 }
 
-.newsletter form {
-background-color: transparent;
-width: 380px;
-max-width: 100%;
-position: relative;
-}
-
-.newsletter form input:first-child {
-color: #ffeebe;
-background-color: black;
-color: white;
-display: inline-block;
-width: 100%;
-padding: 14px 130px 14px 15px;
-border: 2px solid #ffeebe;
-outline: none;
-border-radius: 30px;
-}
-
-.newsletter form input:last-child {
-position: absolute;
-display: inline-block;
-outline: none;
-border: none;
-padding: 10px 30px;
-border-radius: 30px;
-background-color: #ffeebe;
-color: #0a0e11;
-box-shadow: 0px 0px 5px #0a0e11, 0px 0px 15px #0a0e11;
-top: 6px;
-right: 6px;
-cursor: pointer;
-}
-
 .about {
 width: 100%;
 padding: 100px 0px;
@@ -540,20 +506,53 @@ footer::before {
 }
 }
 
+
+/* General Styles */
+.newsletter form {
+    background-color: transparent;
+    width: 380px;
+    max-width: 100%;
+    position: relative;
+}
+
+.newsletter form input:first-child {
+    color: #ffeebe;
+    background-color: black;
+    display: inline-block;
+    width: 100%;
+    padding: 14px 130px 14px 15px; /* Space for the button */
+    border: 2px solid #ffeebe;
+    outline: none;
+    border-radius: 30px;
+}
+
+.newsletter form input:last-child {
+    position: absolute;
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background-color: #ffeebe;
+    color: #0a0e11;
+    box-shadow: 0px 0px 5px #0a0e11, 0px 0px 15px #0a0e11;
+    top: 6px; /* Vertical alignment */
+    right: 6px; /* Right alignment inside the bar */
+    cursor: pointer;
+}
+
+/* Mobile-specific Adjustments */
 @media screen and (max-width: 768px) {
     .newsletter form {
-        width: 100%; /* Ensure the form adapts to the screen width */
+        width: 100%;
     }
 
     .newsletter form input:first-child {
-        padding: 14px 10px 14px 15px;
-        width: calc(100% - 90px); /* Adjust width to account for the button */
+        padding: 14px 100px 14px 15px; /* Adjust space for button */
     }
 
     .newsletter form input:last-child {
         top: 6px;
         right: 6px;
-        width: auto;
         padding: 10px 20px;
     }
 }
