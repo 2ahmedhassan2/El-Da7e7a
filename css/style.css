@@ -473,6 +473,11 @@ html,body {
     width: 100%;
 }
 
+ul {
+display: flex;
+flex-direction: row;
+}
+    
 .newsletter form input:first-child {
     padding: 14px 10px 14px 15px;
 }
