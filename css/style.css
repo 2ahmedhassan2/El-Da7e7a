@@ -66,9 +66,9 @@ text-transform: capitalize;
 }
 
 nav ul li a:hover {
-color: #0a0e11;
+color: #ffeebe;
 transition: .4s;
-text-shadow: 0px 0px 30px #ffeebe;
+text-shadow: 0px 0px 30px black;
 }
 
 .button {
@@ -113,8 +113,9 @@ margin-bottom: 50px;
 }
 
 h4 {
-color: black;
-text-shadow: 0px 0px 30px #ffeebe;
+background-color: transparent;
+color: #ffeebe;
+text-shadow: 0px 0px 30px black;
 letter-spacing: 2px;
 font-size: 20px;
 }
