@@ -113,9 +113,8 @@ margin-bottom: 50px;
 }
 
 h4 {
-background-color: transparent;
 color: black;
-text-shadow: 0px 0px 15px #ffeebe;
+text-shadow: 0px 0px 30px #ffeebe;
 letter-spacing: 2px;
 font-size: 20px;
 }
