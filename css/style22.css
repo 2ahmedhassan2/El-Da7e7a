@@ -360,6 +360,11 @@
         footer::before {
             clip-path: circle(8% at left 44%);
         }
+
+        div iframe{
+        width: 340px ;
+        }
+
         
         .box {
             display: flex;
