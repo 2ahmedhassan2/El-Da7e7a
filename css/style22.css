@@ -63,17 +63,24 @@
     }
 
     .buttonn {
-    position: relative;
-    color: #ffeebe;
-    background-color: #0a0e11;
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact center */
+    background-color: #ffeebe;
+    color: black;
     text-decoration: none;
     border: 2px solid transparent;
     border-radius: 30px;
     font-size: 20px;
     font-weight: bold;
     padding: 10px 35px;
-    margin: 60px 0px;
-    transition: transform .4s;
+    z-index: 10; /* Ensure it stays above the iframe */
+    transition: transform 0.4s;
+    }
+
+    .buttonn:hover {
+    transform: scale(1.2);
     }
 
     .button {
@@ -128,6 +135,7 @@
         display: flex;
         text-align: center;
         justify-content: center;
+        position: relative;
         align-items: center;
         min-height: 1100px;
         }
