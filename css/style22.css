@@ -63,8 +63,6 @@
     }
 
     .buttonn {
-    left: 50%;
-    right: 50%;
     color: #ffeebe;
     background-color: #0a0e11;
     text-decoration: none;
@@ -118,23 +116,13 @@
         z-index: 1;
     }
 
+    .file a {
+    left: 30%;
+    right: 30%;   
+    }
 
     .file{
-    background-color: #ffeebe;
-    color: #0a0e11;
-    text-decoration: none;
-    border: 2px solid transparent;
-    font-weight: bold;
-    padding: 9px 22px;
-    border-radius: 30px;
-    transition: .4s;
-    }
-    
-    .file:hover {
-    color: #ffeebe;
-    background-color: #0a0e11;
-    border: 2px solid #ffeebe;
-    cursor: pointer;
+        height: 90px;
     }
 
     .box {
