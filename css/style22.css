@@ -63,7 +63,7 @@
     }
 
     .buttonn {
-    position: absolute;
+    position: relative;
     top: 200px; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for exact center */
