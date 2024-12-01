@@ -63,8 +63,6 @@
     }
 
     .buttonn {
-    display: flex;
-    flex-direction: column;
     color: #ffeebe;
     background-color: #0a0e11;
     text-decoration: none;
