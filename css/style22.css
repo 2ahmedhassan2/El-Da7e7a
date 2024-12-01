@@ -64,7 +64,8 @@
 
     .buttonn {
     position: absolute;
-    top: 50%; /* Center vertically */
+    
+    top: 10%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust for exact center */
     background-color: #ffeebe;
