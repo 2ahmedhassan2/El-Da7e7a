@@ -116,10 +116,11 @@
     }
     
     div iframe{
+        border: 2px solid transparent;
+        border-radius: 30px;
         position: absolute;
         min-height: 900px;
         max-width: 1500px;
-        z-index: 1;
     }
 
 
