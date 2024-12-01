@@ -96,13 +96,13 @@
     }
     
     .box {
-        background-color: #ffeebe;
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        min-height: 550px;
-        }
+    background-color: #ffeebe;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 550px;
+    }
 
     .card {
     height: 380px;
@@ -144,7 +144,7 @@
     color: #ffeebe;
     background-color: #0a0e11;
     font-size: 25px;
-    line-height: 27px;
+    line-height: 36px;
     padding-bottom: 25px;
     }
     
