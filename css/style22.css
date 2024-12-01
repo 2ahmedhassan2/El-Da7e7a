@@ -65,9 +65,10 @@
     .buttonn {
     display: flex;
     text-align: center;
-    background-color: #0a0e11;
     color: #ffeebe;
+    background-color: #0a0e11;
     text-decoration: none;
+    width: 200px;
     border: 2px solid transparent;
     border-radius: 30px;
     font-size: 20px;
