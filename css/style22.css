@@ -63,7 +63,7 @@
     }
 
     .buttonn {
-    display: flex;
+    display: block;
     text-align: center;
     color: #ffeebe;
     background-color: #0a0e11;
