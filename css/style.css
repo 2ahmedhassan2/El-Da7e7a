@@ -489,6 +489,7 @@ footer::before {
 }
 
 .card {
+    height: 410px;
     padding: 8px 15px;
     margin: 25px;
 }
