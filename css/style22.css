@@ -63,7 +63,8 @@
     }
 
     .buttonn {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     color: #ffeebe;
     background-color: #0a0e11;
