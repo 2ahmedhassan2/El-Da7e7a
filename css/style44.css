@@ -95,13 +95,18 @@
     font-size: 60px;
     }
     
+    div iframe{
+        min-height: 900px;
+        max-width:1500px ;
+    }
+
     .box {
         background-color: #ffeebe;
         display: flex;
         text-align: center;
         justify-content: center;
         align-items: center;
-        min-height: 550px;
+        min-height: 1100px;
         }
 
     .card {
