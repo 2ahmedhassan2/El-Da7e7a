@@ -64,8 +64,9 @@
 
     .buttonn {
     display: flex;
+    text-align: center;
     background-color: #0a0e11;
-    color: black;
+    color: #ffeebe;
     text-decoration: none;
     border: 2px solid transparent;
     border-radius: 30px;
