@@ -357,7 +357,7 @@
         .box {
             display: flex;
             flex-direction: column;
-            height: 1500px;
+            height: 1400px;
         }
         
         .card {
