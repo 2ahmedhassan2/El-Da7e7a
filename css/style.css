@@ -490,6 +490,7 @@ footer::before {
 
 .card {
     padding: 8px 15px;
+    margin: 25px;
 }
 
 .card i {
