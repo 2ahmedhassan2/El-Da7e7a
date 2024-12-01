@@ -101,7 +101,7 @@
     }
 
 
-    div .file{
+    .file{
     background-color: #ffeebe;
     color: #0a0e11;
     text-decoration: none;
@@ -112,7 +112,7 @@
     transition: .4s;
     }
     
-    div .file:hover {
+    .file:hover {
     color: #ffeebe;
     background-color: #0a0e11;
     border: 2px solid #ffeebe;
