@@ -63,7 +63,7 @@
     }
 
     .buttonn {
-    display: block;
+    display: inline-block;
     text-align: center;
     color: #ffeebe;
     background-color: #0a0e11;
@@ -72,8 +72,8 @@
     border-radius: 30px;
     font-size: 20px;
     font-weight: bold;
-    padding: 10px 20px;
-    margin-bottom: 40px;
+    padding: 10px 35px;
+    margin-bottom: 40px 40px;
     transition: transform .4s;
     }
 
