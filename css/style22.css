@@ -63,7 +63,8 @@
     }
 
     .buttonn {
-    position: relative;
+    left: 50%;
+    right: 50%;
     color: #ffeebe;
     background-color: #0a0e11;
     text-decoration: none;
@@ -72,11 +73,11 @@
     font-size: 20px;
     font-weight: bold;
     padding: 10px 35px;
-    margin-bottom: 40px 40px;
+    margin: 60px 0px;
     transition: transform .4s;
     }
 
-    a .button {
+    .button {
     background-color: #ffeebe;
     color: black;
     text-decoration: none;
