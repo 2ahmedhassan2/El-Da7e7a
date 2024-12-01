@@ -499,11 +499,11 @@ footer::before {
 }
 
 .card:hover {
-transform: scale(1.05);
+transform: scale(1.07);
 }
     
 .card .button {
-    padding: 10px 30px;
+    padding: 9px 40px;
 }
 
 .title h2 {
