@@ -503,6 +503,7 @@ transform: scale(1.05);
 }
     
 .card .button {
+    width: 60px;
     padding: 9px 20px;
 }
 
