@@ -388,13 +388,10 @@
             clip-path: circle(8% at left 44%);
         }
 
-        div iframe{
-        width: 100%;
-        }
 
         div iframe{
-        max-height: 600px;
-        max-width: 340px;
+        max-height: 400px;
+        max-width: 310px;
         }
         
         .box {
