@@ -358,10 +358,12 @@
         .box {
             display: flex;
             flex-direction: column;
+            height: 1400px;
         }
         
         .card {
             padding: 8px 15px;
+            margin: 25px;
         }
         
         .card i {
