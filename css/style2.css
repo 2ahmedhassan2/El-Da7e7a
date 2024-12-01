@@ -353,11 +353,12 @@
         .box {
             display: flex;
             flex-direction: column;
-            height: 2000px;
+            height: 1500px;
         }
         
         .card {
             padding: 8px 15px;
+            margin: 25px;
         }
         
         .card i {
