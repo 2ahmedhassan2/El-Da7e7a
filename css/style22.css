@@ -63,6 +63,7 @@
     }
 
     .buttonn {
+    position: relative;
     color: #ffeebe;
     background-color: #0a0e11;
     text-decoration: none;
@@ -109,8 +110,9 @@
     }
     
     div iframe{
+        position: absolute;
         min-height: 900px;
-        max-width:1500px ;
+        max-width: 1500px;
     }
 
 
