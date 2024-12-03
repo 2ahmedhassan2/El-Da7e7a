@@ -359,6 +359,11 @@
         footer::before {
             clip-path: circle(8% at left 44%);
         }
+
+        div iframe{
+        left:5%;
+        right:5%;
+        }
         
         .box {
             display: flex;
