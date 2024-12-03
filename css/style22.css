@@ -116,7 +116,9 @@
     }
     
 
-
+    div iframe{
+        min-height: 900px;
+    }
 
     .file{
         background: #ffeebe;
@@ -386,6 +388,9 @@
         }
 
 
+        div iframe{
+        height: 350px;
+        }
     
         
         .box {
