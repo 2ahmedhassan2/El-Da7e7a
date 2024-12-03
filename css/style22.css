@@ -312,7 +312,7 @@
     font-size: 14px;
     }
 
-    @media (max-width: 1px) {
+    @media (max-width: 768px) {
             .container {
                 width: 100%;
                 align-items: center;
@@ -390,7 +390,7 @@
     
     
             div iframe{
-            height: 768px;
+            height: 500px;
             }
         
             
