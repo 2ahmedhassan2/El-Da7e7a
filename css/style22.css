@@ -115,10 +115,7 @@
     font-size: 60px;
     }
     
-    div iframe{
-        min-height: 900px;
-        max-width: 1500px;
-    }
+
 
 
     .file{
@@ -389,10 +386,7 @@
         }
 
 
-        div iframe{
-        left:5%;
-        right:5%;
-        }
+    
         
         .box {
             display: flex;
