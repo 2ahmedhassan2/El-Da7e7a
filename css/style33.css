@@ -361,8 +361,8 @@
         }
 
         div iframe{
-        left:5%;
-        right:5%;
+        margin-left:5%;
+        margin-right:5%;
         }
         
         .box {
