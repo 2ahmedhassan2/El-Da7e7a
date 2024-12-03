@@ -360,9 +360,10 @@
             clip-path: circle(8% at left 44%);
         }
 
-        div iframe{
-        margin-left:5%;
-        margin-right:5%;
+        div iframe {
+            margin: 0 auto;
+            display: block;
+            width: 90%; /* Adjust to control the overall width */
         }
         
         .box {
