@@ -117,6 +117,7 @@
     
 
     div iframe{
+        width: auto;
         min-height: 900px;
     }
 
