@@ -313,101 +313,107 @@
     }
 
     @media (max-width: 1024px) {
-    .container {
-        width: 100%;
-        align-items: center;
-    }
-
-    .logo {
-        padding: 20px 10px;
-    }
+            .container {
+                width: 100%;
+                align-items: center;
+            }
     
-    nav {
-        display: flex;
-        flex-direction: column;
-        font-size: 20px;
-        padding-left: 0px;
-        padding-right: 0px;
-        text-align: center;
-    }
     
-    .button {
-        border-radius: 15px;
-        font-weight: bold;
-        padding: 4px 20px;
-        margin-top: 10px;
-        display: inline-block;
-        top: 8px;
-        right: 16px;
-    }
+            .logo {
+            padding: 20px 10px;
+            }
+            
+            nav {
+                display: flex;
+                flex-direction: column;
+                font-size: 20px;
+                padding-left: 0px;
+                padding-right: 0px;
+                text-align: center;
+            }
+            
+            .button {
+                border-radius: 15px;
+                font-weight: bold;
+                padding: 4px 20px;
+                margin-top: 10px;
+                display: inline-block;
+                top: 8px;
+                right: 16px;
+            }
+            
+            .content {
+                left: 3%;
+                right: 3%;
+                top: 60%;
+            }
+            
+            html,body {
+                overflow-x: hidden;     
+            }
+            
+            .newsletter form {
+                width: 100%;
+            }
+            
+            .newsletter form input:first-child {
+                padding: 14px 10px 14px 15px;
+            }
+            
+            .about {
+                padding: 50px 0px;
+            }
+            
+            .about img {
+                width: 170px;
+                height: 400px;
+            }
+            
+            .about-text h2 {
+                color: #ffeebe;
+                font-size: 40px;
+            }
+            
+            .about-text {
+                width: 100%;
+            }
+            
+            
+            footer::after {
+                clip-path: circle(8% at right 44%);
+            }
+            
+            
+            footer::before {
+                clip-path: circle(8% at left 44%);
+            }
     
-    .content {
-        left: 3%;
-        right: 3%;
-        top: 60%;
-    }
     
-    html, body {
-        overflow-x: hidden;     
-    }
+            div iframe{
+            height: 150px;
+            }
+        
+            
+            .box {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .card {
+                padding: 8px 15px;
+            }
+            
+            .card i {
+                margin: 15px 0px;
+            }
+            
+            .card .button {
+                padding: 9px 20px;
+            }
+            
+            .title h2 {
+                font-size: 40px;
+                width: auto;
+            }
+            }
     
-    .newsletter form {
-        width: 100%;
-    }
-    
-    .newsletter form input:first-child {
-        padding: 14px 10px 14px 15px;
-    }
-    
-    .about {
-        padding: 50px 0px;
-    }
-    
-    .about img {
-        width: 170px;
-        height: 400px;
-    }
-    
-    .about-text h2 {
-        color: #ffeebe;
-        font-size: 40px;
-    }
-    
-    .about-text {
-        width: 100%;
-    }
-    
-    footer::after {
-        clip-path: circle(8% at right 44%);
-    }
-    
-    footer::before {
-        clip-path: circle(8% at left 44%);
-    }
-    
-    div iframe {
-        height: 150px;
-    }
-    
-    .box {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .card {
-        padding: 8px 15px;
-    }
-    
-    .card i {
-        margin: 15px 0px;
-    }
-    
-    .card .button {
-        padding: 9px 20px;
-    }
-    
-    .title h2 {
-        font-size: 40px;
-        width: auto;
-    }
-}
