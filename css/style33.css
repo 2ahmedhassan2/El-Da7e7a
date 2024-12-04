@@ -78,7 +78,7 @@
     }
 
     .buttonn:hover {
-    transform: scale(1.07);
+    transform: scale(1.2);
     }
 
     .button {
@@ -95,7 +95,7 @@
     }
     
     .button:hover {
-    transform: scale(1.2);
+    transform: scale(1.07);
     }
     
     .content {
