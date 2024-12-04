@@ -333,7 +333,7 @@
             }
             
             .button {
-                flex-direction: row;
+                display: flex;
                 border-radius: 15px;
                 font-weight: bold;
                 padding: 4px 20px;
