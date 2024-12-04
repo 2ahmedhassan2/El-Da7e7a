@@ -320,7 +320,7 @@
     
     
             .logo {
-            display: flex;
+            display: block;
             flex-direction: column;
             padding: 20px 10px;
             }
