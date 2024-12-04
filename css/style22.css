@@ -324,8 +324,6 @@
             }
             
             nav {
-                display: flex;
-                flex-direction: row;
                 font-size: 20px;
                 padding-left: 0px;
                 padding-right: 0px;
@@ -333,6 +331,8 @@
             }
             
             .button {
+                display: flex;
+                flex-direction: row;
                 border-radius: 15px;
                 font-weight: bold;
                 padding: 4px 20px;
