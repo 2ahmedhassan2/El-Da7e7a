@@ -66,9 +66,9 @@ text-transform: capitalize;
 }
 
 nav ul li a:hover {
-color: #ffeebe;
+color: #000000;
 transition: .4s;
-text-shadow: 0px 0px 30px black;
+text-shadow: 0px 0px 30px #ffeebe;
 }
 
 .button {
