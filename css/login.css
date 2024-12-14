@@ -4,9 +4,9 @@
     font-family: sans-serif;
     box-sizing: border-box;
     }
-        e
+        
     .back {
-    background-image: url('../images/pics.webp');
+    background-image: url(../images/pics.jpg);
     background-size: cover;
     height: 641px;
     }
@@ -152,7 +152,7 @@
     background-color: transparent;
     color: #ffeebe;
     margin: 20px 0px 20px;
-    font-size: 60px;
+    font-size: 50px;
     }
     
     .box {
