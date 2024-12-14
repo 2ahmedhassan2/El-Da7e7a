@@ -363,6 +363,10 @@
             margin-top: 15px;
             display: inline-block;
         }
+
+        h1 {
+            font-size: 35px;
+        }
         
         .content {
             left: 3%;
