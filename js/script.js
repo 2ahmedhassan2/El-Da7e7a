@@ -1,4 +1,4 @@
-const text = "";
+const text = "خاص فقط بالفرقة الثانية | كليه تجاره جامعة أسيوط";
 const animatedText = document.getElementById("animated-text");
 
 let index = 0;
