@@ -6,7 +6,7 @@
     }
         e
     .back {
-    background-image: url(../images/pic.webp);
+    background-image: url('../images/pic.webp');
     background-size: cover;
     height: 641px;
     }
@@ -352,6 +352,17 @@
             top: 8px;
             right: 16px;
         }
+
+        button {
+            align-items: center;
+            border-radius: 15px;
+            font-weight: bold;
+            padding: 8px 40px;
+            margin:auto;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            display: inline-block;
+        }
         
         .content {
             left: 3%;
@@ -407,6 +418,7 @@
         .card {
             width: 340px;
             padding: 8px 15px;
+            margin: 80px 20px;
         }
         
         .card i {
