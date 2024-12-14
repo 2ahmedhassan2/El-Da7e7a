@@ -43,7 +43,12 @@
     ul {
         background-color: transparent;
     }
-    
+
+
+    #FORCE {
+        color: #000000;
+    }
+
 
     #auth {
         display: flex;
