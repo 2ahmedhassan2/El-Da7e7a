@@ -74,8 +74,10 @@
     }
     
     .button:hover {
-    transform: scale(1.07);
-    }
+    background-color: #000000;
+    color: #ffeebe;
+    border: 2px solid #ffeebe;
+}
     
     .content {
     direction: rtl;
