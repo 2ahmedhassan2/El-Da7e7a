@@ -1,10 +1,13 @@
-// public/js/auth.js
-
 // Function to check if the user is logged in
 function checkLogin() {
     const user = localStorage.getItem('loggedInUser');
-    if (!user) {
-        // Redirect to login page if not logged in
+    
+    // Normalize the path to handle both root ("/") and "index.html"
+    const currentPath = window.location.pathname;
+    const isRootPath = currentPath === '/' || currentPath.endsWith('/index.html');
+
+    if (!user && isRootPath) {
+        // Redirect to login page if not logged in and accessing root or index.html
         window.location.href = 'login.html';
     }
 }
@@ -64,3 +67,6 @@ function logout() {
     localStorage.removeItem('loggedInUser');
     window.location.href = 'index.html';
 }
+
+// Run checkLogin on page load
+document.addEventListener('DOMContentLoaded', checkLogin);
