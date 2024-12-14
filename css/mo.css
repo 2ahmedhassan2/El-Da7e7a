@@ -74,8 +74,10 @@
     transition: transform .4s;
     }
     
-    .button:hover {
-    transform: scale(1.07);
+   .button:hover {
+    background-color: #000000;
+    color: #ffeebe;
+    border: 2px solid #ffeebe;
     }
     
     .content {
