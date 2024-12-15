@@ -541,11 +541,10 @@
   
     .menu-icon {
       display: block; /* Make menu icon visible for small screens */
-      position: fixed;
       top: 37px;
       left: 20px;
       font-size: 28px;
-      color: white;
+      color: #ffeebe;
       cursor: pointer;
       z-index: 1100;
     }
