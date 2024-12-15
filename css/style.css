@@ -70,7 +70,11 @@ text-transform: capitalize;
 }
 
 nav ul li a:hover {
-color: #000000;
+background-color: #ffeebe;
+color: black;
+text-decoration: none;
+border: 2px solid transparent;
+border-radius: 30px;
 transition: .4s;
 text-shadow: 0px 0px 30px #ffeebe;
 }
