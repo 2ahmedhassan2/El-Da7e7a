@@ -1,78 +1,162 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>El-Da7e7a</title>
-      <meta name="description" content="">
-      <link rel="icon" type="image/png" href="images/favicon.png">
-      
-      <script src="https://kit.fontawesome.com/5d176afb31.js" crossorigin="anonymous"></script>
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/mo.css">
-  </head>
-  <body>
-    <nav>
-        <a href="index.html" class="logo"> El-Da7e7a </a>
-        <a href="https://ahmedhassanab.sarahah.pro" class="button"> ادعمنا برأيك </a>
-    </nav>
-    <div class="box">
-        <div class="card">
-          <i class="fa-solid fa-file-alt"></i>
-          <h3> الرائد </h3>
-          <div class="pra">
-            <p style="text-align: center;">
-              <a class="button" href="https://www.dropbox.com/scl/fi/bhp7s18lfm1hthhjk7ybg/Raed-0-REV.pdf?rlkey=82mdoelx4js6hazvyp64fr6fj&st=lvxkjn6h&dl=1"> مراجعة علي منهج أولي </a>
-              <a class="button" href="https://www.dropbox.com/scl/fi/05ysl1oafzteo73kbtr96/Raed-1.PDF?rlkey=em5paooe4brvru456ekuk44ks&st=b21a7wrn&dl=1"> المذكرة رقم 1 </a>
-              <a class="button" href="https://www.dropbox.com/scl/fi/9zyprvtp7utcnts4ddcjh/Raed-2.pdf?rlkey=sx5hk01daur8wwz11lszkim8e&st=fzawn6bf&dl=1"> المذكرة رقم 2 </a>
-              <a class="button" href="https://www.dropbox.com/scl/fi/35zhgvqvdv8xhql2k4heg/Raed-3.PDF?rlkey=lm4i0wx8ksa3829bw335a4uv8&st=s502sfv7&dl=1"> المذكرة رقم 3 </a>
-              <a class="button" href="https://www.dropbox.com/scl/fi/pnw9yfnd8uur16gxl0s30/Raed-4.PDF?rlkey=ecei9lxhf45qofl4hil832n72&st=34ebqx1l&dl=1"> المذكرة رقم 4 </a>
-              <a class="button" href="#"> NA </a>
-              <a class="button" href="#"> NA </a>
-              <a class="button" href="#"> NA </a>
-              <a class="button" href="#"> NA </a>
-              <a class="button" href="#"> NA </a>
-              <a class="button" href="#"> NA </a>
-              <a class="button" href="#"> NA </a>
-              <a class="button" href="#"> NA </a>
-            </p>
-          </div>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy Rating</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        .pra {
+            margin: 15px 0;
+        }
+        .button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .rating {
+            margin-top: 20px;
+        }
+        .rating p {
+            margin: 5px 0;
+        }
+        .star {
+            font-size: 24px;
+            color: #ccc;
+            cursor: pointer;
+        }
+        .star:hover,
+        .star.selected {
+            color: #f5b301;
+        }
+    </style>
+</head>
+<body>
+    <!-- Academy 1: الرائد -->
+    <div class="card">
+        <h3>الرائد</h3>
+        <div class="pra">
+            <!-- Filter -->
+            <label for="raed-filter">اختر المذكرة:</label>
+            <select id="raed-filter" onchange="filterNotes('raed', this.value)">
+                <option value="all">عرض الكل</option>
+                <option value="0">مراجعة</option>
+                <option value="1">المذكرة 1</option>
+                <option value="2">المذكرة 2</option>
+                <option value="3">المذكرة 3</option>
+                <option value="4">المذكرة 4</option>
+            </select>
+
+            <!-- Notes -->
+            <div id="raed-notes">
+                <a class="button" data-note="0" href="https://www.dropbox.com/scl/fi/bhp7s18lfm1hthhjk7ybg/Raed-0-REV.pdf?dl=1">مراجعة علي منهج أولي</a>
+                <a class="button" data-note="1" href="https://www.dropbox.com/scl/fi/05ysl1oafzteo73kbtr96/Raed-1.PDF?dl=1">المذكرة رقم 1</a>
+                <a class="button" data-note="2" href="https://www.dropbox.com/scl/fi/9zyprvtp7utcnts4ddcjh/Raed-2.pdf?dl=1">المذكرة رقم 2</a>
+                <a class="button" data-note="3" href="https://www.dropbox.com/scl/fi/35zhgvqvdv8xhql2k4heg/Raed-3.PDF?dl=1">المذكرة رقم 3</a>
+                <a class="button" data-note="4" href="https://www.dropbox.com/scl/fi/pnw9yfnd8uur16gxl0s30/Raed-4.PDF?dl=1">المذكرة رقم 4</a>
+            </div>
+
+            <!-- Rating -->
+            <div class="rating">
+                <p>قيم الأكاديمية:</p>
+                <span class="star" data-value="1" onclick="rateAcademy('raed', 1)">&#9733;</span>
+                <span class="star" data-value="2" onclick="rateAcademy('raed', 2)">&#9733;</span>
+                <span class="star" data-value="3" onclick="rateAcademy('raed', 3)">&#9733;</span>
+                <span class="star" data-value="4" onclick="rateAcademy('raed', 4)">&#9733;</span>
+                <span class="star" data-value="5" onclick="rateAcademy('raed', 5)">&#9733;</span>
+                <p id="raed-rating-result">التقييم: 0 نجمة</p>
+            </div>
         </div>
-        <div class="card">
-          <i class="fa-solid fa-file-alt"></i>
-          <h3> الصفوة </h3>
-          <div class="pra">
-            <p style="text-align: center;">
-              <a class="button" href="https://www.dropbox.com/scl/fi/84kfyt2zuujy9k5yv361a/Safwa-0-REV.pdf?rlkey=5eq33vct0w9vmyimaa947fdk6&st=zeeslpxy&dl=1"> مراجعة علي منهج أولي </a>
-              <a class="button" href="https://www.dropbox.com/scl/fi/wr9qcmyio8t1dcm2hjkfp/Safwa-1.pdf?rlkey=vd69s8gp247ywgbicpzz97t47&st=8dvcp75f&dl=1"> المذكرة رقم 1 </a>
-              <a class="button" href="https://www.dropbox.com/scl/fi/r9tj0muqeiptagvxb18ut/Safwa-2.pdf?rlkey=l55ix0d4e1g2x8sgju0a3yroh&st=tlufcyo0&dl=1"> المذكرة رقم 2 </a>
-              <a class="button" href="https://www.dropbox.com/scl/fi/36o38pveft5jtn4lemk5m/Safwa-3.pdf?rlkey=nyyzycm6eoyfjak5gle3xvc1y&st=v6gkdm7x&dl=1"> المذكرة رقم 3 </a>
-              <a class="button" href="https://www.dropbox.com/scl/fi/pmzy40ndeg4c8fqwssq4z/Safwa-4.pdf?rlkey=ysnilibjhedxvqg45xbloqwet&st=3abatpm7&dl=1"> المذكرة رقم 4 </a>
-              <a class="button" href="https://www.dropbox.com/scl/fi/75f7w4kupywvtpjylgws3/Safwa-5.pdf?rlkey=yeqkfo6us4092q8sc1d9klwnz&st=zu2t3sc1&dl=1"> المذكرة رقم 5 </a>
-              <a class="button" href="https://www.dropbox.com/scl/fi/dtqfcuo2vvf7eb8zabfug/Safwa-6.pdf?rlkey=y32eqveq949nwp44tnzw1qwf8&st=co6c588r&dl=1"> المذكرة رقم 6 </a>
-              <a class="button" href="https://www.dropbox.com/scl/fi/798grdnl4je2m0g6nsuom/Safwa-7.pdf?rlkey=ppj4nzrhhip943vjqjkbxf4gf&st=oof92fou&dl=1"> المذكرة رقم 7 </a>
-              <a class="button" href="#"> NA </a>
-              <a class="button" href="#"> NA </a>
-              <a class="button" href="#"> NA </a>
-              <a class="button" href="#"> NA </a>
-              <a class="button" href="#"> NA </a>
-            </p>
-          </div>
+    </div>
+
+    <!-- Academy 2: الصفوة -->
+    <div class="card">
+        <h3>الصفوة</h3>
+        <div class="pra">
+            <!-- Filter -->
+            <label for="safwa-filter">اختر المذكرة:</label>
+            <select id="safwa-filter" onchange="filterNotes('safwa', this.value)">
+                <option value="all">عرض الكل</option>
+                <option value="0">مراجعة</option>
+                <option value="1">المذكرة 1</option>
+                <option value="2">المذكرة 2</option>
+                <option value="3">المذكرة 3</option>
+                <option value="4">المذكرة 4</option>
+            </select>
+
+            <!-- Notes -->
+            <div id="safwa-notes">
+                <a class="button" data-note="0" href="https://www.dropbox.com/scl/fi/example/safwa-0-REV.pdf?dl=1">مراجعة علي منهج أولي</a>
+                <a class="button" data-note="1" href="https://www.dropbox.com/scl/fi/example/safwa-1.PDF?dl=1">المذكرة رقم 1</a>
+                <a class="button" data-note="2" href="https://www.dropbox.com/scl/fi/example/safwa-2.pdf?dl=1">المذكرة رقم 2</a>
+                <a class="button" data-note="3" href="https://www.dropbox.com/scl/fi/example/safwa-3.PDF?dl=1">المذكرة رقم 3</a>
+                <a class="button" data-note="4" href="https://www.dropbox.com/scl/fi/example/safwa-4.PDF?dl=1">المذكرة رقم 4</a>
+            </div>
+
+            <!-- Rating -->
+            <div class="rating">
+                <p>قيم الأكاديمية:</p>
+                <span class="star" data-value="1" onclick="rateAcademy('safwa', 1)">&#9733;</span>
+                <span class="star" data-value="2" onclick="rateAcademy('safwa', 2)">&#9733;</span>
+                <span class="star" data-value="3" onclick="rateAcademy('safwa', 3)">&#9733;</span>
+                <span class="star" data-value="4" onclick="rateAcademy('safwa', 4)">&#9733;</span>
+                <span class="star" data-value="5" onclick="rateAcademy('safwa', 5)">&#9733;</span>
+                <p id="safwa-rating-result">التقييم: 0 نجمة</p>
+            </div>
         </div>
-      </div>
-      <div>
-      </div>
-    <footer class="clip">
-        <p> تواصل معنا </p>
-        <div class="social">
-          <a href="http://wa.me/201128641717"> <i class="fa-brands fa-whatsapp"></i> </a>
-          <a href="https://www.facebook.com/2ahmedhassan2"> <i class="fa-brands fa-facebook"></i> </a>
-          <a href="https://github.com/2ahmedhassan2/"> <i class="fa-brands fa-github"></i> </a>
-          <a href="https://www.instagram.com/2ahmedhassan2/"> <i class="fa-brands fa-instagram"></i> </a>
-          <a href="https://www.linkedin.com/in/2ahmedhassan2/"> <i class="fa-brands fa-linkedin-in"></i> </a>
-        </div>
-        <p class="end"> &copy; 2024 Ahmed Hassan. All rights reserved. </p>
-      </footer>
-    </body>
-    </html>
+    </div>
+
+    <script>
+        // Filter Notes Function
+        function filterNotes(academy, value) {
+            const notes = document.querySelectorAll(`#${academy}-notes .button`);
+            notes.forEach(note => {
+                const noteValue = note.getAttribute('data-note');
+                if (value === 'all' || noteValue === value) {
+                    note.style.display = 'block';
+                } else {
+                    note.style.display = 'none';
+                }
+            });
+        }
+
+        // Rating Function
+        function rateAcademy(academy, value) {
+            const result = document.getElementById(`${academy}-rating-result`);
+            result.innerText = `التقييم: ${value} نجمة`;
+
+            // Highlight stars
+            const stars = document.querySelectorAll(`.${academy}-stars .star`);
+            stars.forEach((star, index) => {
+                if (index < value) {
+                    star.classList.add('selected');
+                } else {
+                    star.classList.remove('selected');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
