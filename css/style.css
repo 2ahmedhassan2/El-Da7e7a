@@ -541,6 +541,7 @@
   
     .menu-icon {
       display: block; /* Make menu icon visible for small screens */
+      position: fixed;
       top: 37px;
       left: 20px;
       font-size: 28px;
