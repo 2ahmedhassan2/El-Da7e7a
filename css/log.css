@@ -340,6 +340,10 @@
         .logo {
         padding: 20px 10px;
         }
+
+            .back {
+    height: 700px;
+    }
         
         nav {
             font-size: 20px;
