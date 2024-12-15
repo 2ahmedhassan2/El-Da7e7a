@@ -70,13 +70,12 @@ text-transform: capitalize;
 }
 
 nav ul li a:hover {
-background-color: #ffeebe;
-color: black;
+background-color:  #000000;
+color: #ffeebe;
 text-decoration: none;
 border: 2px solid transparent;
 border-radius: 30px;
 transition: .4s;
-text-shadow: 0px 0px 30px #ffeebe;
 }
 
 .button {
