@@ -155,7 +155,7 @@
     .card:hover {
     background-color: #0a0e11;
     transition: .6s;
-    transform: scale(1.1);
+    transform: scale(1.04);
     }
     
     .card i {
