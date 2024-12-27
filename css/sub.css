@@ -17,7 +17,13 @@
     background-color: #0a0e11;
     box-shadow: 0px 0px 30px black;
     }
-    
+
+
+    .revision {
+        display: flex;
+        flex-direction: column;
+    }
+
     .logo {
     color: #ffeebe;
     background-color: transparent;
