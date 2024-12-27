@@ -24,6 +24,10 @@
         flex-direction: column;
     }
 
+    .revmar {
+        margin: 20px;
+    }
+
     .logo {
     color: #ffeebe;
     background-color: transparent;
