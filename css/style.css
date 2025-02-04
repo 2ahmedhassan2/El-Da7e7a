@@ -75,6 +75,8 @@ html {
     color: #ffeebe;
     text-decoration: none;
     border: 2px solid transparent;
+    transition: 5s;
+
     }
     
     .button {
@@ -135,7 +137,7 @@ html {
     .about {
     width: 100%;
     padding: 100px 0px;
-    background-color: #0a0e11;
+    background-color: #000000;
     }
     
     .about img {
@@ -144,12 +146,12 @@ html {
     }
     
     .about-text {
-    background-color: #0a0e11;
+    background-color: #000000;
     width: 550px;
     }
     
     .main {
-    background-color: #0a0e11;
+    background-color: #000000;
     width: 1130px;
     max-width: 95%;
     margin: 9px auto;
@@ -160,7 +162,7 @@ html {
     
     .about-text h2 {
     color: #ffeebe;
-    background-color: #0a0e11;
+    background-color: #000000;
     font-size: 75px;
     text-transform: capitalize;
     margin-bottom: 20px;
@@ -168,7 +170,7 @@ html {
     
     .about-text h5 {
     color: #ffeebe;
-    background-color: #0a0e11;
+    background-color: #000000;
     letter-spacing: 2px;
     font-size: 25px;
     margin-bottom: 25px;
@@ -176,15 +178,15 @@ html {
     }
     
     section div div h3 {
-        color: #0a0e11;
-        background-color: #0a0e11;
+        color: #000000;
+        background-color: #000000;
         text-shadow: 0px 0px 10px #ffeebe;
         font-size: 40px;
     }
     
     .about-text p{
     color: #ffeebe;
-    background-color: #0a0e11;
+    background-color: #000000;
     letter-spacing: 1px;
     line-height: 28px;
     margin-bottom: 25px;
@@ -194,7 +196,7 @@ html {
     
     button {
     background-color: #ffeebe;
-    color: #0a0e11;
+    color: #000000;
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
@@ -205,13 +207,13 @@ html {
     
     button:hover {
     color: #ffeebe;
-    background-color: #0a0e11;
+    background-color: #000000;
     border: 2px solid #ffeebe;
     cursor: pointer;
     }
     
     .service {
-    background-color: #0a0e11;
+    background-color: #000000;
     width: 100%;
     padding: 100px 0px;
     }
@@ -252,18 +254,18 @@ html {
     height: 435px;
     width: 335px;
     padding: 20px 35px;
-    background-color: #0a0e11;
+    background-color: #000000;
     border-radius: 20px ;
     margin: 15px;
     position: relative;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0px 0px 30px #0a0e11;
+    box-shadow: 0px 0px 30px #000000;
     transition: box-shadow .6s, transform .6s;
     }
     
     .card:hover {
-    background-color: #0a0e11;
+    background-color: #000000;
     transition: .6s;
     transform: scale(1.1);
     }
@@ -274,19 +276,19 @@ html {
     text-align: center;
     margin: 25px 0px;
     color: #ffeebe;
-    background-color: #0a0e11;
+    background-color: #000000;
     }
     
     div div div h3 {
     color: #ffeebe;
-    background-color: #0a0e11;
+    background-color: #000000;
     font-size: 35px;
     margin-bottom: 15px;
     }
     
     .pra p{
     color: #ffeebe;
-    background-color: #0a0e11;
+    background-color: #000000;
     font-size: 25px;
     line-height: 34px;
     padding-bottom: 25px;
@@ -299,7 +301,7 @@ html {
     
     .card .button {
     background-color: #ffeebe;
-    color: #0a0e11;
+    color: #000000;
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
@@ -310,7 +312,7 @@ html {
     
     .card .button:hover {
     color: #ffeebe;
-    background-color: #0a0e11;
+    background-color: #000000;
     border: 2px solid #ffeebe;
     cursor: pointer;
     }
@@ -318,7 +320,7 @@ html {
     .contact-me {
     width: 100%;
     height: 150px;
-    background: #0a0e11;
+    background: #000000;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -327,7 +329,7 @@ html {
     
     .contact-me p {
     color: #ffeebe;
-    background-color: #0a0e11;
+    background-color: #000000;
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 25px;
@@ -335,7 +337,7 @@ html {
     
     .contact-me .button-two {
     background-color: #ffeebe;
-    color: #0a0e11;
+    color: #000000;
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
@@ -355,7 +357,7 @@ html {
     position: relative;
     width: 100%;
     height: 350px;
-    background: #0a0e11;
+    background: #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -365,14 +367,14 @@ html {
     footer p:nth-child(1) {
     font-size: 30px;
     color: #ffeebe;
-    background-color: #0a0e11;
+    background-color: #000000;
     margin-bottom: 20px;
     font-weight: bold;
     }
     
     footer p:nth-child(2) {
     color: #ffeebe;
-    background-color: #0a0e11;
+    background-color: #000000;
     font-size: 17px;
     width: 500px;
     text-align: center;
@@ -405,7 +407,7 @@ html {
     .end {  
     position: absolute;
     color: white;
-    background-color: #0a0e11;
+    background-color: #000000;
     bottom: 35px;
     font-size: 14px;
     }
