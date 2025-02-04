@@ -540,6 +540,10 @@ html {
       padding-top: 20px;
     }
 
+    .container {
+        background-position: right;
+    }
+
        nav {
     padding-top: 1%;
     padding-left: 8%;
