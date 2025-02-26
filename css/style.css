@@ -522,18 +522,3 @@ html {
     }
     }
 
-
-
-
-    /* Apply styles for screens 1580px or narrower */
-@media (max-width: 1580px) {
-
-    .container {
-        background-position: right;
-    }
-
-    nav {
-    background-color: transparent;
-    box-shadow: 0px 0px 30px #ffeebe;
-    }
-  
