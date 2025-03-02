@@ -14,7 +14,7 @@ html {
 .container {
     height: 100vh;
     width: 100%;
-    background-image: url('../images/pics.webp');
+    background-image: url('../images/output.webp');
     background-color: rgba(0, 0, 0, 0.5);
     background-size: cover;
     background-position: center;
