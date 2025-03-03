@@ -87,11 +87,6 @@
     transition: transform .4s;
     }
     
-   .button:hover {
-    background-color: #000000;
-    color: #ffeebe;
-    border: 2px solid #ffeebe;
-    }
     
     .content {
     direction: rtl;
