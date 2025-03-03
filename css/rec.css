@@ -63,13 +63,8 @@
     }
 
 
-
-    .audio-container {
-    align-items: center;
-    gap: 10px;
-    }
     audio {
-        
+        align-items: center;
         width: 100%;
         max-width: 300px; /* Adjust this as needed */
     }
