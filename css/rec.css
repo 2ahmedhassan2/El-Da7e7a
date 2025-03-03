@@ -103,6 +103,12 @@
     transition: .4s;
     }
 
+    .buttonn:hover {
+    background-color: #ffeebe;
+    color: #000000;
+    border: 2px solid #ffeebe;
+    }
+
     .content {
     direction: rtl;
     text-align: right;
