@@ -86,6 +86,20 @@
     padding: 10px 10px;
     transition: transform .4s;
     }
+
+
+    .buttonn {
+    background-color: #ffeebe;
+    color: black;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 10px;
+    transition: transform .4s;
+    }
+
     
    .button:hover {
     background-color: #000000;
@@ -169,7 +183,8 @@
 
     .card .button {
     align-content: center;
-    display: block;
+    display: flex;
+    flex-direction: column;
     background-color: #000000;
     color: #ffeebe;
     text-decoration: none;
