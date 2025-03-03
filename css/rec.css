@@ -143,12 +143,6 @@
     transition: box-shadow .6s, transform .6s;
     }
     
-    .card:hover {
-    background-color: #000000;
-    transition: .6s;
-    transform: scale(1.03);
-    }
-    
     .card i {
     font-size: 40px;
     display: block;
@@ -386,8 +380,8 @@
         }
         
         .card {
-            width: 340px;
-            padding: 8px 3px;
+            width: 350px;
+            padding: 6px 2px;
         }
         
         .card i {
