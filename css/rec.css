@@ -132,7 +132,7 @@
     .card {
     height: 100%;
     width: 30%;
-    padding: 20px 35px;
+    padding: 10px 5px;
     background-color: #000000;
     border-radius: 20px ;
     margin: 40px;
@@ -186,7 +186,7 @@
     text-decoration: none;
     border: 2px solid #ffeebe;
     font-weight: bold;
-    padding: 15px;
+    padding: 5px;
     margin: 20px;
     border-radius: 30px;
     transition: .4s;
