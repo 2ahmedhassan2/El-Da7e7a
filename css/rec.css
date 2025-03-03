@@ -69,12 +69,6 @@
     }
 
 
-    span {
-        display: flex;
-        flex-direction: row;
-    }
-
-
     .button {
     background-color: #ffeebe;
     color: black;
@@ -103,8 +97,8 @@
     text-decoration: none;
     border: 2px solid #ffeebe;
     font-weight: bold;
-    padding: 15px;
-    margin: 20px;
+    padding: 7px 15px;
+    margin: 8px;
     border-radius: 30px;
     transition: .4s;
     }
