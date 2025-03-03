@@ -66,7 +66,6 @@
     audio {
         align-items: center;
         width: 100%;
-        max-width: 300px; /* Adjust this as needed */
     }
 
     
@@ -127,7 +126,7 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        min-height: 1400px;
+        padding: 2%;
         }
 
     .card {
