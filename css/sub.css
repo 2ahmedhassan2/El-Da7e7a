@@ -391,7 +391,7 @@
         .box {
             display: flex;
             flex-direction: column;
-            height: 1630px;
+            min-height: 1630px;
         }
         
         .card {
