@@ -89,17 +89,18 @@
 
 
     .buttonn {
-    width: 35%;
-    background-color: #ffeebe;
-    color: black;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    color: #ffeebe;
     text-decoration: none;
-    border: 2px solid transparent;
-    border-radius: 30px;
-    font-size: 20px;
+    border: 2px solid #ffeebe;
     font-weight: bold;
-    padding: 10px 10px;
-    margin: 5%;
-    transition: transform .4s;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 30px;
+    transition: .4s;
     }
 
     .content {
