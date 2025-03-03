@@ -76,17 +76,22 @@
 
     
     .button {
-    background-color: #000000;
-    color: #ffeebe;
+    background-color: #ffeebe;
+    color: black;
     text-decoration: none;
-    border: 2px solid #ffeebe;
+    border: 2px solid transparent;
     border-radius: 30px;
     font-size: 20px;
     font-weight: bold;
-    padding: 20px 20px;
+    padding: 10px 10px;
     transition: transform .4s;
     }
     
+   .button:hover {
+    background-color: #000000;
+    color: #ffeebe;
+    border: 2px solid #ffeebe;
+    }
     
     .content {
     direction: rtl;
@@ -165,22 +170,14 @@
     .card .button {
     align-content: center;
     display: block;
-    background-color: #ffeebe;
-    color: #000000;
+    background-color: #000000;
+    color: #ffeebe;
     text-decoration: none;
-    border: 2px solid transparent;
+    border: 2px solid #ffeebe;
     font-weight: bold;
     padding: 9px 17px;
     border-radius: 30px;
     transition: .4s;
-    }
-    
-    .card .button:hover {
-    color: #ffeebe;
-    background-color: #000000;
-    border: 2px solid #ffeebe;
-    cursor: pointer;
-    transform: scale(1.06   );
     }
     
     .contact-me {
