@@ -68,7 +68,13 @@
         width: 100%;
     }
 
-    
+
+    span {
+        display: flex;
+        flex-direction: row;
+    }
+
+
     .button {
     background-color: #ffeebe;
     color: black;
