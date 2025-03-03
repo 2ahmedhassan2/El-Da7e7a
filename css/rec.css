@@ -78,7 +78,7 @@
     border-radius: 30px;
     font-size: 20px;
     font-weight: bold;
-    padding: 10px 10px;
+    padding: auto;
     transition: transform .4s;
     }
 
@@ -133,7 +133,7 @@
     .card {
     height: 100%;
     width: 30%;
-    padding: 20px 20px;
+    padding: 20px 35px;
     background-color: #000000;
     border-radius: 20px ;
     margin: 40px;
