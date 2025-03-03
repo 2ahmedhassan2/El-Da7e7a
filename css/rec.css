@@ -185,7 +185,8 @@
     text-decoration: none;
     border: 2px solid #ffeebe;
     font-weight: bold;
-    padding: 9px 17px;
+    padding: 15px;
+    margin: 20px;
     border-radius: 30px;
     transition: .4s;
     }
