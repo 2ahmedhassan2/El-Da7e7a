@@ -103,7 +103,7 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        min-height: 1400px;
+        max-height: 1400px;
         }
 
     .card {
