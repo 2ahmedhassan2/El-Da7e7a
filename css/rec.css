@@ -98,7 +98,7 @@
     border: 2px solid #ffeebe;
     font-weight: bold;
     padding: 7px 15px;
-    margin-bottom: 0px;
+    margin: 2px;
     border-radius: 30px;
     transition: .4s;
     }
@@ -167,10 +167,6 @@
     padding-bottom: 25px;
     }
     
-    .pra a{
-    margin-bottom: 30px;
-    }
-
     .card .button {
     align-content: center;
     display: flex;
