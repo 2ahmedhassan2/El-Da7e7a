@@ -166,6 +166,10 @@
     line-height: 27px;
     padding-bottom: 25px;
     }
+
+    .pra a{
+    margin-bottom: 20px;
+    }
     
     .card .button {
     align-content: center;
