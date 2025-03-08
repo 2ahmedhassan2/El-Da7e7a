@@ -49,6 +49,22 @@ html {
     ul {
         background-color: transparent;
     }
+
+
+   .buttonn {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    color: #ffeebe;
+    text-decoration: none;
+    border: 2px solid #ffeebe;
+    font-weight: bold;
+    padding: 7px 15px;
+    margin: 2px;
+    border-radius: 30px;
+    transition: .4s;
+    }
     
     
     nav ul li {
