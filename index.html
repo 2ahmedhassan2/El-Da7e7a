@@ -40,6 +40,12 @@
     <link rel="preload" as="image" href="images/output.webp">
 </head>
 <body>
+    <!-- Welcome screen -->
+  <div id="welcome-screen">
+    <h1>اللهم صلي وسلم وبارك على سيدنا محمد وعلى آله وصحبه أجمعين 🤍</h1>
+  </div>
+
+    
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGK5BM5P"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -142,6 +148,19 @@
         </div>
       </div>
     </div>
+
+
+    <script>
+    window.addEventListener('load', function() {
+      const welcome = document.getElementById('welcome-screen');
+      const main = document.getElementById('main-content');
+
+      setTimeout(() => {
+        welcome.classList.add('hide-welcome');
+        main.style.display = 'block';
+      }, 3500); // Adjust delay if needed
+    });
+    </script>
 
     <!-- Footer Section -->
     <footer id="contact" class="clip">
