@@ -152,15 +152,18 @@
 
 
     <script>
-    window.addEventListener('load', function() {
-      const welcome = document.getElementById('welcome-screen');
-      const main = document.getElementById('main-content');
-
-      setTimeout(() => {
-        welcome.classList.add('hide-welcome');
-        main.style.display = 'block';
-      }, 2000); // Adjust delay if needed
-    });
+        window.addEventListener('load', function() {
+          const welcome = document.getElementById('welcome-screen');
+          const main = document.getElementById('main-content');
+        
+          setTimeout(() => {
+            // Apply RTL only at this point
+            main.setAttribute('dir', 'rtl');
+            
+            welcome.classList.add('hide-welcome');
+            main.style.display = 'block';
+          }, 2000); // Adjust delay if needed
+        });
     </script>
 
     <!-- Footer Section -->
@@ -177,3 +180,4 @@
     </footer>
 </body>
 </html>
+
