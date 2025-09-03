@@ -173,17 +173,39 @@
     setTimeout(() => {
       welcome.classList.add('hide-welcome');
 
-      // trigger animations AFTER welcome screen hides
-      document.querySelector("nav").classList.add("animate__animated","animate__fadeInDown");
-      document.querySelector("header").classList.add("animate__animated","animate__zoomIn");
-      document.querySelectorAll(".card").forEach((card, i) => {
-        card.classList.add("animate__animated","animate__fadeInUp");
-        card.style.animationDelay = (i * 0.5) + "s"; // staggered effect
-      });
-      document.querySelector("footer").classList.add("animate__animated","animate__fadeInUp");
-    }, 2000); // matches welcome screen duration
+      // small delay to ensure welcome screen fade-out completes
+      setTimeout(() => {
+        // Animate navbar
+        const nav = document.querySelector("nav");
+        nav.classList.remove("animate__animated","animate__fadeInDown"); // reset if any
+        void nav.offsetWidth; // 🔑 force reflow
+        nav.classList.add("animate__animated","animate__fadeInDown");
+
+        // Animate header
+        const header = document.querySelector("header");
+        header.classList.remove("animate__animated","animate__zoomIn");
+        void header.offsetWidth;
+        header.classList.add("animate__animated","animate__zoomIn");
+
+        // Animate cards with stagger
+        document.querySelectorAll(".card").forEach((card, i) => {
+          card.classList.remove("animate__animated","animate__fadeInUp");
+          void card.offsetWidth;
+          card.classList.add("animate__animated","animate__fadeInUp");
+          card.style.animationDelay = (i * 0.5) + "s";
+        });
+
+        // Animate footer
+        const footer = document.querySelector("footer");
+        footer.classList.remove("animate__animated","animate__fadeInUp");
+        void footer.offsetWidth;
+        footer.classList.add("animate__animated","animate__fadeInUp");
+      }, 500); // wait for welcome fadeOut
+    }, 2000); // show welcome for 2s
   });
 </script>
 
+
 </body>
 </html>
+
