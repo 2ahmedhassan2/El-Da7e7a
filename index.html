@@ -170,13 +170,25 @@
       <p>&copy; 2024 Ahmed Hassan. All rights reserved.</p>
     </footer>
 
-    <script>
-      window.addEventListener('load', function() {
-        const welcome = document.getElementById('welcome-screen');
-        setTimeout(() => {
-          welcome.classList.add('hide-welcome');
-        }, 2000);
+<script>
+  window.addEventListener('load', function() {
+    const welcome = document.getElementById('welcome-screen');
+
+    setTimeout(() => {
+      welcome.classList.add('hide-welcome');
+
+      // trigger animations AFTER welcome screen hides
+      document.querySelector("nav").classList.add("animate__animated","animate__fadeInDown");
+      document.querySelector("header").classList.add("animate__animated","animate__zoomIn");
+      document.querySelectorAll(".card").forEach((card, i) => {
+        card.classList.add("animate__animated","animate__fadeInUp");
+        card.style.animationDelay = (i * 0.5) + "s"; // staggered effect
       });
-    </script>
+      document.querySelector("footer").classList.add("animate__animated","animate__fadeInUp");
+    }, 2000); // matches welcome screen duration
+  });
+</script>
+
 </body>
 </html>
+
