@@ -57,6 +57,12 @@ a {
   border: 1px solid #fff;
 }
 
+.navbar .navbar-brand {
+  order: -1; /* keeps logo always on the left */
+}
+
+
+
 /* Header */
 header {
   background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), 
@@ -116,6 +122,7 @@ footer {
 .social a:hover {
   transform: scale(1.2);
 }
+
 
 
 
