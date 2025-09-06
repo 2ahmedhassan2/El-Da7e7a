@@ -37,34 +37,11 @@
     <!-- Bootstrap & CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-    
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    
     <link rel="stylesheet" href="css/style.css">
-
-    <style>
-      /* Custom hide animation for welcome screen */
-      #welcome-screen {
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-      }
-      #welcome-screen.hide-welcome {
-        animation: fadeOut 1s forwards;
-      }
-      @keyframes fadeOut {
-        to { opacity: 0; visibility: hidden; }
-      }
-    </style>
 </head>
 <body>
     <!-- Welcome screen -->
-    <div id="welcome-screen" class="animate__animated animate__fadeIn">
+    <div id="welcome-screen">
         <h1>اللهم صلي وسلم وبارك على سيدنا محمد وعلى آله وصحبه أجمعين 🤍</h1>
     </div>
 
@@ -72,18 +49,23 @@
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGK5BM5P" height="0" width="0" style="display:none;visibility:hidden"></iframe>
     </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
       <div class="container d-flex justify-content-between align-items-center flex-row-reverse">
-        <a dir="ltr" class="navbar-brand fw-bold me-auto fs-2" href="index.html">El-Da7e7a</a>
+        <!-- Logo (forced left) -->
+        <a dir="ltr" class="navbar-brand fw-bold me-auto fs-2" href="#">El-Da7e7a</a>
+    
+        <!-- Button (forced right) -->
         <a href="https://ahmedhassanab.sarahah.pro" class="btn btn-custom">ادعمنا برأيك</a>
       </div>
     </nav>
-    
+
+
     <!-- Header -->
-    <header class="text-center my-5">
-      <div class="container">
+    <header>
+      <div class="container text-center">
         <h4 class="mb-3">أهلا بيك في موقعنا المتواضع</h4>
         <h1 class="fw-bold mb-3">خاص فقط بالفرقة الثانية - كلية التجارة | جامعة أسيوط</h1>
         <a href="#masader" class="btn btn-custom btn-lg mt-3">اكتشف المواد</a>
@@ -94,7 +76,6 @@
     <section id="masader" class="py-5 bg-white">
       <div class="container">
         <div class="row g-4">
-
           <div class="col-md-4">
             <div class="card p-3 h-100">
               <i class="fa-solid fa-landmark"></i>
@@ -153,8 +134,7 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="text-center py-4">
+    <footer>
       <p class="mb-2">تواصل معنا</p>
       <div class="social mb-3">
         <a href="http://wa.me/201128641717"><i class="fa-brands fa-whatsapp"></i></a>
@@ -166,47 +146,19 @@
       <p>&copy; 2024 Ahmed Hassan. All rights reserved.</p>
     </footer>
 
-<script>
-  window.addEventListener('load', function() {
-    const welcome = document.getElementById('welcome-screen');
-
-    setTimeout(() => {
-      welcome.classList.add('hide-welcome');
-
-      // small delay to ensure welcome screen fade-out completes
-      setTimeout(() => {
-        // Animate navbar
-        const nav = document.querySelector("nav");
-        nav.classList.remove("animate__animated","animate__fadeInDown"); // reset if any
-        void nav.offsetWidth; // 🔑 force reflow
-        nav.classList.add("animate__animated","animate__fadeInDown");
-
-        // Animate header
-        const header = document.querySelector("header");
-        header.classList.remove("animate__animated","animate__zoomIn");
-        void header.offsetWidth;
-        header.classList.add("animate__animated","animate__zoomIn");
-
-        // Animate cards with stagger
-        document.querySelectorAll(".card").forEach((card, i) => {
-          card.classList.remove("animate__animated","animate__fadeInUp");
-          void card.offsetWidth;
-          card.classList.add("animate__animated","animate__fadeInUp");
-          card.style.animationDelay = (i * 0.5) + "s";
-        });
-
-        // Animate footer
-        const footer = document.querySelector("footer");
-        footer.classList.remove("animate__animated","animate__fadeInUp");
-        void footer.offsetWidth;
-        footer.classList.add("animate__animated","animate__fadeInUp");
-      }, 500); // wait for welcome fadeOut
-    }, 2000); // show welcome for 2s
-  });
-</script>
-
-
+    <script>
+      window.addEventListener('load', function() {
+        const welcome = document.getElementById('welcome-screen');
+        setTimeout(() => {
+          welcome.classList.add('hide-welcome');
+        }, 2000);
+      });
+    </script>
 </body>
 </html>
+
+
+
+
 
 
