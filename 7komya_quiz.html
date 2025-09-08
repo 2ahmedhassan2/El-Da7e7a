@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz</title>
+
+  <!-- Bootstrap & FontAwesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* عام */
+    body { background-color: #000; color: #fff; font-family: 'Tahoma', sans-serif; }
+    a { text-decoration: none; }
+
+    /* Navbar */
+    .navbar { background-color: #000; box-shadow: 0px 0px 20px rgba(255,255,255,0.08); }
+    .navbar-brand, .nav-link { color: #fff !important; font-size: 1.2rem; }
+    .btn-custom { background: #fff; color: #000; border-radius: 30px; padding: 8px 18px; transition: all .3s; }
+    .btn-custom:hover { background: #000; color: #fff; border: 1px solid #fff; }
+
+    /* المحتوى */
+    .contains { background-color: #fff; padding: 20px; color: #000; border-radius: 12px; margin: 20px auto; max-width: 1100px; }
+    .card-quiz { background: #000; border: 1px solid #fff; border-radius: 12px; color: #fff; margin-bottom: 20px; }
+    .card-quiz .card-body { color: #fff; }
+    .option-letter { font-weight:700; width:26px; display:inline-block; text-align:center; }
+    .option-text { display:inline-block; }
+    .result-card.correct { border: 2px solid #198754; background: #ecf9f0; color: #000; }
+    .result-card.wrong { border: 2px solid #dc3545; background: #fff0f0; color: #000; }
+    .badge-correct { background:#198754; color:#fff; }
+    .badge-wrong { background:#dc3545; color:#fff; }
+    .muted-sm { color:#ccc; font-size:0.9rem; }
+
+    /* Footer */
+    footer { background: #000; color: #fff; text-align: center; padding: 30px 10px; margin-top: 20px; }
+    .social a { color: #fff; font-size: 1.6rem; margin: 0 8px; transition: transform .3s; }
+    .social a:hover { transform: scale(1.15); }
+
+    /* small adjustments */
+    .input-group .option-letter-badge { min-width: 36px; text-align:center; background:#efefef; border-radius:4px; padding:6px; }
+    .list-group-item input[type="radio"] { transform: scale(1.05); }
+
+    /* Responsiveness for mobiles */
+@media (max-width: 768px) {
+  .contains {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .card-quiz {
+    font-size: 0.95rem;
+  }
+
+  .card-quiz h3,
+  .card-quiz h4 {
+    font-size: 1.2rem;
+  }
+
+  /* الفلترة وأزرار التحديث */
+  .d-flex.gap-2.align-items-center {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  #filterGroup {
+    width: 100% !important;
+  }
+
+  #refreshBtn {
+    width: 100%;
+  }
+
+  /* أزرار التحكم */
+  .d-flex.gap-2.mt-3 {
+    flex-direction: column;
+  }
+  .d-flex.gap-2.mt-3 button {
+    width: 100%;
+  }
+
+  /* نموذج الإضافة */
+  #addForm .d-flex.gap-2 {
+    flex-direction: column;
+  }
+  #addForm button,
+  #addForm select,
+  #addForm input {
+    width: 100%;
+  }
+  .form-check.form-switch {
+    align-self: flex-start;
+  }
+
+  /* النتائج */
+  .result-card h5 {
+    font-size: 1rem;
+  }
+  .result-card .option-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+  .contains {
+    padding: 10px;
+  }
+  .card-quiz {
+    font-size: 0.9rem;
+  }
+  .option-letter {
+    width: 20px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container d-flex justify-content-between align-items-center flex-row-reverse">
+      <a dir="ltr" class="navbar-brand fw-bold me-auto fs-3" href="index.html">El-Da7e7a</a>
+      <a href="https://ahmedhassanab.sarahah.pro" class="btn btn-custom">ادعمنا برأيك</a>
+    </div>
+  </nav>
+
+  <div class="contains py-4 px-4">
+
+    <!-- Quiz card -->
+    <div class="card card-quiz shadow-sm mb-4">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <div>
+            <h3 class="card-title mb-0">أسئلة محاسبة حكومية</h3>
+            <div class="muted-sm">اختر الإجابة الصحيحة ثم اضغط إرسال</div>
+          </div>
+
+          <div class="d-flex gap-2 align-items-center">
+            <label class="muted-sm mb-0">عرض حسب المجموعة:</label>
+            <!-- فلترة حسب الفصل -->
+            <select id="filterGroup" class="form-select form-select-sm" style="width:160px;">
+              <option value="">الكل</option>
+              <option value="الفصل الأول">الفصل الأول</option>
+              <option value="الفصل الثاني">الفصل الثاني</option>
+              <option value="الفصل الثالث">الفصل الثالث</option>
+              <option value="الفصل الرابع">الفصل الرابع</option>
+              <option value="الفصل الخامس">الفصل الخامس</option>
+              <option value="الفصل السادس">الفصل السادس</option>
+              <option value="الفصل السابع">الفصل السابع</option>
+              <option value="الفصل الثامن">الفصل الثامن</option>
+              <option value="الفصل التاسع">الفصل التاسع</option>
+              <option value="الفصل العاشر">الفصل العاشر</option>
+              <option value="الفصل الحادي عشر">الفصل الحادي عشر</option>
+              <option value="الفصل الثاني عشر">الفصل الثاني عشر</option>
+            </select>
+
+            <button id="refreshBtn" class="btn btn-outline-light btn-sm" onclick="loadQuestions()">تحديث</button>
+          </div>
+        </div>
+
+        <div id="status" class="muted-sm mb-2">جارٍ تحميل الأسئلة ...</div>
+
+        <form id="quizForm" hidden></form>
+
+        <div class="d-flex gap-2 mt-3">
+          <button id="submitBtn" class="btn btn-custom" type="button" onclick="checkAnswers()" hidden>إرسال</button>
+          <button id="clearResultsBtn" class="btn btn-outline-light" type="button" onclick="clearResults()" hidden>مسح النتائج</button>
+        </div>
+
+        <div id="resultSummary" class="mt-3"></div>
+      </div>
+    </div>
+
+    <!-- Results area -->
+    <div id="resultsArea" class="mb-4"></div>
+
+    <!-- Add question card -->
+    <div class="card card-quiz shadow-sm">
+      <div class="card-body">
+        <h4 class="card-title">إضافة سؤال جديد</h4>
+        <div class="muted-sm mb-3">أدخل كل اختيار في حقل منفصل. اختر الإجابة الصحيحة من القائمة.</div>
+
+        <form id="addForm">
+          <div class="mb-3">
+            <label class="form-label">نص السؤال</label>
+            <input type="text" id="qText" class="form-control" placeholder="اكتب السؤال هنا" required>
+          </div>
+
+          <div id="optionsWrapper" class="mb-2"></div>
+
+          <div class="mb-2 d-flex gap-2">
+            <button type="button" class="btn btn-outline-light btn-sm" onclick="addOption()">+ إضافة اختيار</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" onclick="removeOption()">ـ إزالة اختيار</button>
+            <div class="form-check form-switch ms-2">
+              <input class="form-check-input" type="checkbox" id="useFilterForAdd">
+              <label class="form-check-label muted-sm" for="useFilterForAdd">استخدم المجموعة المختارة عند الإضافة</label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">الإجابة الصحيحة</label>
+            <select id="qAnswer" class="form-select" required>
+              <option value="">اختر الإجابة الصحيحة</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">المجموعة</label>
+            <!-- اختيار الفصل عند الإضافة -->
+            <select id="qGroup" class="form-select" required>
+              <option value="">اختر الفصل</option>
+              <option value="الفصل الأول">الفصل الأول</option>
+              <option value="الفصل الثاني">الفصل الثاني</option>
+              <option value="الفصل الثالث">الفصل الثالث</option>
+              <option value="الفصل الرابع">الفصل الرابع</option>
+              <option value="الفصل الخامس">الفصل الخامس</option>
+              <option value="الفصل السادس">الفصل السادس</option>
+              <option value="الفصل السابع">الفصل السابع</option>
+              <option value="الفصل الثامن">الفصل الثامن</option>
+              <option value="الفصل التاسع">الفصل التاسع</option>
+              <option value="الفصل العاشر">الفصل العاشر</option>
+              <option value="الفصل الحادي عشر">الفصل الحادي عشر</option>
+              <option value="الفصل الثاني عشر">الفصل الثاني عشر</option>
+            </select>
+          </div>
+
+          <div class="d-flex gap-2 align-items-center">
+            <button type="submit" class="btn btn-success">إضافة السؤال</button>
+            <div id="addStatus" class="muted-sm"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p class="mb-2">تواصل معنا</p>
+    <div class="social mb-3">
+      <a href="http://wa.me/201128641717"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/2ahmedhassan2"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://github.com/2ahmedhassan2/"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/2ahmedhassan2/"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/2ahmedhassan2/"><i class="fa-brands fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2024 Ahmed Hassan. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ------ اضبط هذا الرابط لسكربت Google Apps Script الصحيح (الذي لديك بالفعل) ------
+    const API_URL = "https://script.google.com/macros/s/AKfycbyGc9BvyefZYgi9guRhMc9YLD6Tjt1uDbDpT2SJX4X8Hn1Aas4FIEBcfJbkoyMEROk-/exec";
+    // --------------------------------------------------------------------------------
+
+    const $ = sel => document.querySelector(sel);
+    const create = (tag, attrs = {}) => {
+      const el = document.createElement(tag);
+      for (const k in attrs) {
+        if (k === 'text') el.textContent = attrs[k];
+        else el.setAttribute(k, attrs[k]);
+      }
+      return el;
+    };
+
+    const optionsWrapper = document.getElementById('optionsWrapper');
+    const answerSelect = document.getElementById('qAnswer');
+    let questions = [];            // جميع الأسئلة من الخادم
+    let renderedQuestions = [];    // الأسئلة المعروضة حاليا (بعد الفلتر)
+
+    // ---------- إدارة الخيارات داخل فورم الإضافة ----------
+    function addOption(value = '') {
+      const idx = optionsWrapper.querySelectorAll('.option-row').length;
+      const row = create('div', { 'class': 'input-group mb-2 option-row' });
+      row.innerHTML = `
+        <span class="input-group-text option-letter-badge">${String.fromCharCode(65 + idx)}</span>
+        <input class="form-control option-input" type="text" placeholder="نص الاختيار" value="${(value||'').replace(/"/g,'&quot;')}" required/>
+        <button class="btn btn-outline-danger btn-sm remove-opt" type="button" title="حذف الاختيار">حذف</button>
+      `;
+      optionsWrapper.appendChild(row);
+
+      // حدث الحذف والتحديث
+      row.querySelector('.remove-opt').addEventListener('click', () => {
+        row.remove();
+        updateOptionLetters();
+        updateAnswerOptions();
+      });
+      row.querySelector('.option-input').addEventListener('input', updateAnswerOptions);
+      updateAnswerOptions();
+      return row;
+    }
+
+    function removeOption() {
+      const rows = optionsWrapper.querySelectorAll('.option-row');
+      if (rows.length <= 1) return;
+      rows[rows.length - 1].remove();
+      updateOptionLetters();
+      updateAnswerOptions();
+    }
+
+    function updateOptionLetters() {
+      optionsWrapper.querySelectorAll('.option-row').forEach((r, i) => {
+        const badge = r.querySelector('.option-letter-badge');
+        if (badge) badge.textContent = String.fromCharCode(65 + i);
+      });
+    }
+
+    function updateAnswerOptions() {
+      const opts = Array.from(optionsWrapper.querySelectorAll('.option-input')).map(i => i.value.trim()).filter(Boolean);
+      const old = answerSelect.value;
+      answerSelect.innerHTML = '<option value="">اختر الإجابة الصحيحة</option>' + opts.map(o => `<option value="${escapeAttr(o)}">${escapeHtml(o)}</option>`).join('');
+      if (opts.includes(old)) answerSelect.value = old;
+    }
+
+    // انشاء 4 اختيارات افتراضيا
+    addOption(''); addOption(''); addOption(''); addOption('');
+
+    // ---------- تحميل الأسئلة من الخادم ----------
+    async function loadQuestions() {
+      $('#status').textContent = 'جارٍ تحميل الأسئلة ...';
+      $('#resultSummary').innerHTML = '';
+      $('#resultsArea').innerHTML = '';
+      try {
+        const res = await fetch(API_URL);
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        if (!Array.isArray(data)) {
+          console.warn('جواب الخادم ليس مصفوفة:', data);
+        }
+        // تحصين الكائنات (تأكد من وجود الحقول)
+        questions = (Array.isArray(data) ? data : []).map((q, idx) => ({
+          id: q.id ?? q._id ?? q.key ?? idx,
+          question: q.question ?? q.text ?? '',
+          options: Array.isArray(q.options) ? q.options : (typeof q.options === 'string' ? tryParseJSON(q.options) || [] : []),
+          answer: (q.answer ?? q.correct ?? '').toString(),
+          group: q.group ?? q.category ?? ''
+        }));
+        renderQuiz();
+        $('#status').textContent = '';
+      } catch (err) {
+        console.error(err);
+        $('#status').innerHTML = `<span class="text-danger">فشل في تحميل الأسئلة.</span> ${escapeHtml(err.message)}`;
+        $('#submitBtn').hidden = true;
+        $('#clearResultsBtn').hidden = true;
+      }
+    }
+
+    // ---------- عرض الأسئلة (مع الفلتر) ----------
+    function renderQuiz() {
+      const form = $('#quizForm');
+      form.innerHTML = '';
+      const filter = $('#filterGroup').value;
+      renderedQuestions = filter ? questions.filter(q => q.group === filter) : questions.slice();
+
+      if (!renderedQuestions.length) {
+        form.innerHTML = '<p class="muted-sm">لا توجد أسئلة حالياً للمجموعة المحددة.</p>';
+        $('#submitBtn').hidden = true;
+        $('#quizForm').hidden = false;
+        return;
+      }
+
+      renderedQuestions.forEach((q, i) => {
+        const div = create('div', { 'class': 'question mb-3' });
+
+        const header = create('div', { 'class': 'd-flex justify-content-between align-items-center mb-2' });
+        header.innerHTML = `<div><strong>${i+1}.</strong> ${escapeHtml(q.question)} <span class="badge bg-secondary ms-2">${escapeHtml(q.group || 'بدون مجموعة')}</span></div>`;
+        const delBtn = create('button', { 'class':'btn btn-sm btn-outline-danger', 'type':'button' });
+        delBtn.textContent = 'حذف';
+        delBtn.onclick = () => deleteQuestion(q.id);
+        header.appendChild(delBtn);
+
+        div.appendChild(header);
+
+        const list = create('div', { 'class': 'list-group' });
+        if (Array.isArray(q.options)) {
+          q.options.forEach((opt, j) => {
+            const letter = String.fromCharCode(65 + j);
+            const label = create('label', { 'class': 'list-group-item d-flex align-items-center' });
+            label.innerHTML = `
+              <input class="form-check-input me-2" type="radio" name="q${i}" value="${escapeAttr(opt)}">
+              <span class="option-letter">${letter}</span>
+              <span class="option-text ms-2">${escapeHtml(opt)}</span>
+            `;
+            list.appendChild(label);
+          });
+        } else {
+          list.innerHTML = '<div class="list-group-item text-muted">لا توجد خيارات.</div>';
+        }
+
+        div.appendChild(list);
+        form.appendChild(div);
+      });
+
+      $('#submitBtn').hidden = false;
+      $('#clearResultsBtn').hidden = true;
+      $('#quizForm').hidden = false;
+      $('#resultsArea').innerHTML = '';
+      $('#resultSummary').innerHTML = '';
+    }
+
+    // ---------- فحص الإجابات ----------
+    function checkAnswers() {
+      if (!renderedQuestions.length) return;
+      let score = 0;
+      const resultsArea = $('#resultsArea');
+      resultsArea.innerHTML = '';
+
+      renderedQuestions.forEach((q, i) => {
+        const selectedInput = document.querySelector(`input[name="q${i}"]:checked`);
+        const selectedValue = selectedInput ? selectedInput.value.trim() : null;
+        const correctValue = (q.answer || '').trim();
+        const isCorrect = selectedValue && (selectedValue === correctValue);
+        if (isCorrect) score++;
+
+        const card = create('div', { 'class': 'card mb-3 result-card ' + (isCorrect ? 'correct' : 'wrong') });
+        const body = create('div', { 'class': 'card-body' });
+        body.innerHTML = `<h5 class="card-title mb-1">${i+1}. ${escapeHtml(q.question)}</h5>
+                          <div class="muted-sm mb-2">إجابتك: ${selectedValue ? escapeHtml(selectedValue) : '<span class="text-muted">لم تختر إجابة</span>'}</div>`;
+
+        const ul = create('div', { 'class': 'list-group' });
+        if (Array.isArray(q.options)) {
+          q.options.forEach((opt, j) => {
+            const item = create('div', { 'class': 'list-group-item d-flex justify-content-between align-items-center' });
+            item.innerHTML = `<div><span class="option-letter">${String.fromCharCode(65 + j)}</span> <span class="option-text">${escapeHtml(opt)}</span></div>`;
+            if (opt === correctValue) {
+              const badge = create('span', { 'class': 'badge badge-correct rounded-pill' });
+              badge.textContent = 'الإجابة الصحيحة';
+              item.appendChild(badge);
+              item.style.fontWeight = '600';
+            }
+            if (selectedValue && selectedValue === opt && selectedValue !== correctValue) {
+              const badge = create('span', { 'class': 'badge badge-wrong rounded-pill' });
+              badge.textContent = 'خطأ';
+              item.appendChild(badge);
+              item.style.textDecoration = 'line-through';
+            }
+            if (selectedValue && selectedValue === opt && selectedValue === correctValue) {
+              const badge = create('span', { 'class': 'badge badge-correct rounded-pill' });
+              badge.textContent = 'تم اختيارها';
+              item.appendChild(badge);
+            }
+            ul.appendChild(item);
+          });
+        }
+        body.appendChild(ul);
+        card.appendChild(body);
+        resultsArea.appendChild(card);
+      });
+
+      $('#resultSummary').innerHTML = `<div class="alert ${score === renderedQuestions.length ? 'alert-success' : (score === 0 ? 'alert-danger' : 'alert-info')}">
+        <strong>درجتك: ${score} من ${renderedQuestions.length}</strong>
+        </div>`;
+
+      // تعطيل الردود بعد الإرسال
+      document.querySelectorAll('#quizForm input[type="radio"]').forEach(r => r.disabled = true);
+      $('#submitBtn').hidden = true;
+      $('#clearResultsBtn').hidden = false;
+      setTimeout(() => { document.getElementById('resultsArea').scrollIntoView({ behavior: 'smooth' }); }, 120);
+    }
+
+    function clearResults() {
+      document.querySelectorAll('#quizForm input[type="radio"]').forEach(r => { r.disabled = false; r.checked = false; });
+      $('#resultsArea').innerHTML = '';
+      $('#resultSummary').innerHTML = '';
+      $('#submitBtn').hidden = false;
+      $('#clearResultsBtn').hidden = true;
+      document.getElementById('quizForm').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ---------- حذف سؤال ----------
+    async function deleteQuestion(id) {
+      if (!confirm('هل تريد حذف هذا السؤال؟')) return;
+      try {
+        const payload = new URLSearchParams();
+        // المعيار: نرسل deleteId. يجب أن يدعم سكربت Google Apps Script هذا المفتاح لحذف السجل.
+        payload.append('deleteId', id);
+        const res = await fetch(API_URL, { method:'POST', body: payload });
+        // نقرأ النص فقط للتشخيص؛ لا نعتمد على جيسون إلزامياً
+        const txt = await res.text();
+        console.log('delete response:', txt);
+        await loadQuestions();
+      } catch (err) {
+        console.error(err);
+        alert('خطأ أثناء الحذف: ' + err.message);
+      }
+    }
+
+    // ---------- إضافة سؤال جديد ----------
+    async function addQuestion(e) {
+      e.preventDefault();
+      const addStatus = $('#addStatus');
+      const qText = $('#qText').value.trim();
+      const opts = Array.from(document.querySelectorAll('.option-input')).map(i => i.value.trim()).filter(Boolean);
+      const qAnswer = $('#qAnswer').value.trim();
+      const qGroup = $('#qGroup').value.trim();
+
+      if (!qText) { alert('أدخل نص السؤال'); return; }
+      if (opts.length < 2) { alert('أدخل على الأقل خيارين'); return; }
+      if (!opts.includes(qAnswer)) { alert('يجب أن تكون الإجابة الصحيحة إحدى الخيارات'); return; }
+      if (!qGroup) { alert('اختر المجموعة'); return; }
+
+      addStatus.textContent = 'جاري الإرسال...';
+      try {
+        const payload = new URLSearchParams();
+        payload.append('question', qText);
+        payload.append('options', JSON.stringify(opts));
+        payload.append('answer', qAnswer);
+        payload.append('group', qGroup);
+        const res = await fetch(API_URL, { method: 'POST', body: payload });
+        const text = await res.text();
+        console.log('add response:', text);
+        // حاول تحويل النص إلى JSON للتحقق إن أمكن
+        try {
+          const j = JSON.parse(text);
+          if (j && j.ok === false) throw new Error(j.error || 'server error');
+        } catch (e) { /* لا مشكلة إن لم يكن JSON */ }
+
+        addStatus.textContent = 'تمت إضافة السؤال!';
+        document.getElementById('addForm').reset();
+        optionsWrapper.innerHTML = '';
+        addOption(''); addOption(''); addOption(''); addOption('');
+        updateAnswerOptions();
+        await loadQuestions();
+        setTimeout(() => addStatus.textContent = '', 2500);
+      } catch (err) {
+        console.error(err);
+        addStatus.textContent = 'فشل في الإرسال.';
+        alert('خطأ أثناء الإرسال: ' + err.message);
+      }
+    }
+
+    // ---------- مساعدة لتحويل نص JSON لو كان مخزن كسلسلة ----------
+    function tryParseJSON(s) {
+      try { const v = JSON.parse(s); return Array.isArray(v) ? v : null; } catch { return null; }
+    }
+
+    // ---------- مساعدة الـ escape ----------
+    function escapeHtml(s) {
+      if (s === null || s === undefined) return '';
+      return String(s).replace(/[&<>"']/g, m => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[m]));
+    }
+    function escapeAttr(s) {
+      if (s === null || s === undefined) return '';
+      return String(s).replace(/"/g, '&quot;');
+    }
+
+    // ---------- أحداث واجهة المستخدم ----------
+    document.getElementById('filterGroup').addEventListener('change', () => {
+      // إذا اختار المستخدم "استخدم المجموعة المختارة عند الإضافة" نعيّن قيمة المجموعة تلقائياً
+      const filterVal = $('#filterGroup').value;
+      if ($('#useFilterForAdd').checked && filterVal) {
+        $('#qGroup').value = filterVal;
+      }
+      renderQuiz();
+    });
+
+    // إذا تم تفعيل السويتش استخدم المجموعة المحددة مباشرة
+    document.getElementById('useFilterForAdd').addEventListener('change', (e) => {
+      if (e.target.checked) {
+        const filterVal = $('#filterGroup').value;
+        if (filterVal) $('#qGroup').value = filterVal;
+      }
+    });
+
+    $('#addForm').addEventListener('submit', addQuestion);
+
+    // تحميل أولي عند فتح الصفحة
+    window.addEventListener('DOMContentLoaded', loadQuestions);
+  </script>
+</body>
+</html>
