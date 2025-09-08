@@ -35,7 +35,7 @@ a {
 
 /* Header */
 header {
-  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), 
               url('https://aun.edu.eg/commerce/sites/default/files/inline-images/About%20-%20AUN%20Commerce%20Faculty.png') center/cover no-repeat;
   min-height: 40vh;
   display: flex;
@@ -91,3 +91,4 @@ footer {
 .social a:hover {
   transform: scale(1.2);
 }
+
